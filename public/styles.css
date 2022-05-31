@@ -1,0 +1,23 @@
+body{
+  background: rgb(245, 241, 216);
+  color: #ff5d5d;
+}
+
+body>section{
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+h3{
+  margin-top: 40px;
+}
+
+.bold{
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+h3, span, p{
+  margin-bottom: 28px;
+}
