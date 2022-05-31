@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/messages', (req, res) => {
-  db.collection('messages').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, favorited:false}, (err, result) => {
+  db.collection('messages').insertOne({name: req.body.name, msg: req.body.msg, thumbUp: 0, favorited: false}, (err, result) => {
     if (err) return console.log(err)
     console.log('saved to database')
     res.redirect('/')
@@ -40,7 +40,7 @@ app.post('/messages', (req, res) => {
 
 app.put('/favorites', (req, res) => {
   console.log(req.body)
-  db.collection('user')
+  db.collection('messages')
   .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
     $set: {
       favorited: true
@@ -55,8 +55,7 @@ app.put('/favorites', (req, res) => {
 })
 
 
-app.put('/thumbsUp', (req, res) => {
-  console.log(req.body)
+app.put('/messages', (req, res) => {
   db.collection('messages')
   .findOneAndUpdate({name: req.body.name, msg: req.body.msg}, {
     $set: {

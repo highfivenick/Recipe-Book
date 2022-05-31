@@ -1,14 +1,14 @@
 const star = document.getElementsByClassName("fa-star");
 const trash = document.getElementsByClassName("fa-trash");
-const thumbUp = document.getElementsByClassName('fa-thumbs-Up')
+const thumbUp = document.getElementsByClassName('fa-thumbs-up')
 
 Array.from(star).forEach(function(element) {
   element.addEventListener('click', function(e){
     e.preventDefault()
     const name = this.parentNode.parentNode.childNodes[1].innerText
     const msg = this.parentNode.parentNode.childNodes[3].innerText
-    const bookmarks = e.target.classList.contains('gold') ? true : false
-    fetch('bookmarks', {
+    const favorites = e.target.classList.contains('gold') ? true : false
+    fetch('favorites', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

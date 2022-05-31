@@ -24,7 +24,7 @@
     <h3>Recipes</h3>
     <ul class="messages">
     <% for(var i=0; i<messages.length; i++) {%>
-      <li class="message <%= messages[i].bookmarked ? 'gold' : '' %>">
+      <li class="message <%= messages[i].favorited ? 'gold' : '' %>">
         <span class="bold" ><%= messages[i].name %></span>
         <p><%= messages[i].msg %></p>
         <span><%= messages[i].thumbUp %></span>
